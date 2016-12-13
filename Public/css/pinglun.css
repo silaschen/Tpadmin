@@ -1,0 +1,46 @@
+.media-list .media-body .media-heading {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.5em;
+}
+.media-list .media-action {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+.media-list .media-body .hint {
+    color: #999;
+    font-size: 12px;
+}
+.media-list .media-body .media {
+    margin: 5px 0 0;
+    padding: 10px 0 0;
+    border-bottom: none;
+    border-top: #eee solid 1px;
+}
+ul{list-style: none;}
+.user img.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    }
+.user {
+    text-align: center;
+    padding: 45px 0 0 0;
+}
+.user .stat {
+    height: 80px;
+    border-top: #eee solid 1px;
+    padding-top: 20px;
+}
+.user .follow {
+    margin-right: 20px;
+}
+.user-info li {
+    list-style: none;
+    line-height: 2em;
+}
+.panel .panel-heading .panel-title {
+    font-size: 14px;
+    display: inline-block;
+}
