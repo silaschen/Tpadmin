@@ -1,0 +1,78 @@
+  <div class="col-md-12">
+  <form method="GET" action="{:U('lesson/index')}" id='form'>
+      <div class="row">
+            <div class="col-xs-6 col-md-3">
+              <input name="btime" type="date" class="form-control" value="{$_GET['btime']}" placeholder="开始日期">
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <input name="etime" type="date" class="form-control" value="{:I('etime')}" placeholder="截至日期">
+            </div>
+      
+        <div class="col-xs-6 col-md-3">
+          <div class="input-group">
+            <input name="word" type='text' class='form-control' value="{:I('word')}" placeholder='球队/标题/描述/关键词搜索..'>
+            <span class="input-group-addon" onclick="$('#form').submit();"><i class="fa fa-search"></i></span>
+            <if condition="$_GET['word'] neq  '' OR $_GET['btime'] neq '' OR $_GET['etime'] neq ''">
+            <a title='清除条件' class="input-group-addon" href="{:U('lesson/index')}"><i class="fa fa-remove"></i></a>
+            </if>
+          </div>
+        </div>
+      
+      </div>
+      </form>
+      </div>
+      <hr>
+
+
+
+	<div class="col-md-12 ">
+
+          
+                        
+                    
+
+                            <div class="table table-bordered">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                           
+                                            <th>id</th>
+                                            <th>title</th>
+                                            <th>clubName</th>
+                                            <th>状态</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="lessonbody">
+                                    <foreach name="lesson" item="list">
+                                        <tr delid="{$list.id}">
+                                           
+                                            <td>{$list.id}</td>
+                                            <td>{$list.title}</td>
+                                            <td>{$list.clubname}</td>
+
+                <td><if condition="$list.status eq '0'"><span class="label label-danger">未发表</span><else/><span class="label label-success">已发表</span></if></td>
+
+                                            <td><a class="lesson-del btn btn-info"  lessonid="{$list.id}"><i class=" icon-trash"></i></a>&nbsp<a class="up btn btn-info"  uid="{$list.id}" href="{:U('lesson/add',array('id'=>$list['id']))}"><i class="icon-edit"></i></a></td>
+
+                                        </tr>
+                                     </foreach>
+                                    </tbody>
+                                </table>
+                              
+                            </div>
+                   
+
+	</div>
+<script type="text/javascript">
+  
+              $('body').on("click",".lesson-del",function(){
+                  var leid=$(this).attr("lessonid");
+                  var newtr="";
+                   $.post("__APP__/home/lesson/index",{id:leid},function(data){
+                                $("tr[delid='"+data.id+"']").remove();
+
+                        });
+
+                   });
+    </script>

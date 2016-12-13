@@ -1,0 +1,51 @@
+<div class="col-md-5" id="form-video">
+		<form>
+				<div class="form-group">
+					<input type="text" name="title" class="form-control" placeholder="视频标题">
+				</div>	
+				<div class="form-group">
+					<input type="text" name="f" class="form-control" placeholder="视频url地址">
+				</div>
+				<div class="form-group">
+					<input type="text" name="type" class="form-control" placeholder="归属球队">
+				</div>
+		
+				
+				<div class="form-group">
+					<a class="videoadd btn btn-info" action="__APP__/home/video/doadd">添加</a>
+				</div>
+
+
+
+
+
+
+		</form>
+
+
+</div>
+<script type="text/javascript">
+	
+	$('body').on("click",".videoadd",function(){
+		var title=$("input[name='title']").val();
+		var f=$("input[name='f']").val();
+		var type=$("input[name='type']").val();	
+		$(":input").val("");
+		var url=$(this).attr("action");
+		$.post(url,{title:title,f:f,type:type},function(data){
+				//alert(data.title+"视频添加成功");
+				var newf='<div class="text-center" style="padding:150px 20px;"><i class="icon-spinner icon-spin icon-3x"></i></div>';
+				$("#form-video").html(newf);
+				setTimeout(function(){
+						var	newform='<form enctype="multipart/form-data" action="__APP__/home/video/upload" method="post">'+'<input type="hidden" value="'+data.title+'" name="title"><input type="hidden" value="'+data.f+'" name="f"><input type="hidden" value="'+data.type+'" name="type">'+
+ 				'<div class="form-group"><label>选择媒体图片</label><input type="file" name="cover" class="form-control">'+
+ 				'</div><div class="form-group"><button class="btn btn-success">提交</a></div></form>';
+ 				$("#form-video").html(newform);
+
+				},3000);
+
+
+			});
+		
+});
+</script>

@@ -1,0 +1,101 @@
+
+		<div class="col-md-12">
+					<form >
+              <input type="hidden" name="id" value="{$info.id}">
+							<div class="form-group">
+									<input type="text" name="title" class="form-control" placeholder="文章标题" value="{$info.title}">
+
+
+							</div>
+							<div class="form-group">
+									<input type="text" name="description" class="form-control" placeholder="文章描述" value="{$info.description}">
+
+
+							</div>
+
+								<div class="form-group">
+						<textarea name="content"  class="form-control" rows="4" placeholder="文章内容">{$info.content}</textarea>
+
+
+							</div>
+
+        <div class='form-group'>
+          <label>俱乐部</label>
+          <select class='form-control' name='forteam'>
+              <foreach name="team" item="arr">
+
+                <option value='{$arr.id}'>{$arr.clubname}</option>
+
+              </foreach>
+             
+
+          </select>
+        </div>
+
+
+								<div class="form-group">
+									<input type="text" name="tag" class="form-control" placeholder="tags" value="{$info.tag}">
+
+
+							</div>
+								<div class="form-group">
+									<a class="btn btn-info fb">发表</a>
+
+					</form>
+
+
+
+		</div>
+
+
+<script type="text/javascript" src="__PUBLIC__/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+      var ed=CKEDITOR.replace("content");
+      $('body').on("click",".fb",function(){
+          var id = $("input[name='id']").val();
+          var title=$("input[name='title']").val();
+          var description=$("input[name='description']").val();
+          var forteam=$("select[name='forteam']").val();
+       
+          var content=ed.getData();
+          //alert(content);
+       
+          var tag=$("input[name='tag']").val();
+          if(title==""){
+                 $("input[name='title']").next().remove();
+                $("input[name='title']").after("<p>不能为空</p>");
+
+
+          } if(description==""){
+
+            $("input[name='ms']").next().remove();
+            $("input[name='ms']").after("<p>不能为空</p>");
+          }
+         if(forteam==""){
+
+            $("input[name='forteam']").next().remove();
+            $("input[name='forteam']").after("<p>不能为空</p>");
+          }
+
+
+
+          else{
+
+          $.post("__APP__/home/lesson/add",{id:id,title:title,forteam:forteam,description:description,content:content,tag:tag},function(data){
+                    alert(data.title+"发表成功"); //下一步跳转到个人文章页面
+
+                    location.href="{:U('lesson/index')}";
+
+
+
+          });
+        }
+
+      });
+
+    </script>
+    <script type="text/javascript">
+      $("select[name='forteam']").val({$info.forteam});
+
+    </script>
+  

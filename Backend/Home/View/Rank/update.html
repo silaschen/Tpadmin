@@ -1,0 +1,40 @@
+<div class="col-md-5">
+		<form>
+				<div class="form-group">
+					<input type="text" name="clubname" class="form-control" placeholder="俱乐部名字" value="{$model.clubname}">
+				</div>	
+				<div class="form-group">
+					<input type="text" name="rank" class="form-control" value="{$model.rank}" placeholder="rank now">
+				</div>
+				<div class="form-group">
+					<input type="text" name="matchtime" value="{$model.matchtime}" class="form-control" placeholder="比赛场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="wintime" class="form-control" value="{$model.wintime}" placeholder="赢球场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="defeattime" class="form-control" value="{$model.defeattime}" placeholder="输球场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="ping" value="{$model.ping}" class="form-control" placeholder="平局场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="shotgo" class="form-control" value="{$model.shotgo}" placeholder="进球数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="shotoff" class="form-control" value="{$model.shotoff}" placeholder="丢球数">
+				</div>
+				
+				<div class="form-group">
+					<a updateid="{$model.id}" class="rankupdate btn btn-info" action="__APP__/home/rank/doupdate">更新</a>
+				</div>
+
+
+
+
+
+
+		</form>
+
+
+</div>

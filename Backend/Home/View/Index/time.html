@@ -1,0 +1,15 @@
+<h1>现在是北京时间<span id="t"></span></h1>
+<script type="text/javascript">
+	function time(){
+		$.post("__APP__/home/index/time",function(data){
+				$("#t").html(data.day);
+
+		})
+
+
+	}
+	setInterval(time,1000);
+
+
+
+</script>

@@ -1,0 +1,71 @@
+
+		<div class="col-md-10" id="addpic">
+					<form >
+							<div class="form-group">
+									<input type="text" name="title" class="form-control" placeholder="文章标题">
+
+
+							</div>
+							<div class="form-group">
+									<input type="text" name="ms" class="form-control" placeholder="文章描述">
+
+
+							</div>
+
+								<div class="form-group">
+						<textarea name="content"  class="form-control" rows="4" placeholder="文章内容"></textarea>
+
+
+							</div>
+							<div class="form-group">
+									<input type="text" name="type" class="form-control" placeholder="which team">
+
+
+							</div>
+							
+								<div class="form-group">
+									<a class="btn btn-info news-add">发表</a>
+
+										
+
+
+
+
+					</form>
+
+
+
+		</div>
+
+
+<script type="text/javascript" src="__PUBLIC__/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+
+
+		 var ed=CKEDITOR.replace("content");
+		 $('body').on('click','.news-add',function(){
+
+		 var title=$("input[name='title']").val();
+		 var ms=$("input[name='ms']").val();
+		 var content=ed.getData();
+		 var type=$("input[name='type']").val();
+
+		 $.post('__APP__/home/picnews/add',{title:title,ms:ms,content:content,type:type},function(data){
+		 	
+		 		$("#addpic").empty();
+		 		var newwarn='<div class="text-center" style="padding:150px 20px"><i class="icon-spinner icon-spin icon-3x"></i></div>';
+		 		$("#addpic").html(newwarn);
+		 		setTimeout(function(){
+		 			var newform='<form enctype="multipart/form-data" action="__APP__/home/picnews/upload" method="post">'+'<input type="hidden" value="'+data.title+'" name="title"><input type="hidden" value="'+data.ms+'" name="ms"><input type="hidden" value="'+data.content+'" name="content"><input type="hidden" style="display:none;" value="'+data.type+'" name="type">'+
+ 				'<div class="form-group"><label>选择媒体图片</label><input type="file" name="picture" class="form-control">'+
+ 				'</div><div class="form-group"><button class="btn btn-success">提交</a></div></form>';
+ 				$("#addpic").html(newform);
+
+		 		},1000);
+
+
+
+		 });
+
+		 });
+</script>
