@@ -78,7 +78,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="/foot/admin.php/hom
                                 <a href="/foot/admin.php/home/Access/nodelist">accesslist</a>
                             </li>
                             <li>
-                                <a href="/foot/admin.php/home/picnews/index">图片文章管理</a>
+                                <a href="/foot/admin.php/home/Access/rolelist">Role</a>
                             </li>
                         
                         </ul>
@@ -133,103 +133,147 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="/foot/admin.php/hom
                  <!-- /. ROW  -->
                  <hr />
                    <div class="row">
-                 
-		<div class="col-md-12">
-					<form >
-              <input type="hidden" name="id" value="<?php echo ($info["id"]); ?>">
-							<div class="form-group">
-									<input type="text" name="title" class="form-control" placeholder="文章标题" value="<?php echo ($info["title"]); ?>">
-
-
-							</div>
-							<div class="form-group">
-									<input type="text" name="description" class="form-control" placeholder="文章描述" value="<?php echo ($info["description"]); ?>">
-
-
-							</div>
-
-								<div class="form-group">
-						<textarea name="content"  class="form-control" rows="4" placeholder="文章内容"><?php echo ($info["content"]); ?></textarea>
-
-
-							</div>
-
-        <div class='form-group'>
-          <label>俱乐部</label>
-          <select class='form-control' name='forteam'>
-              <?php if(is_array($team)): foreach($team as $key=>$arr): ?><option value='<?php echo ($arr["id"]); ?>'><?php echo ($arr["clubname"]); ?></option><?php endforeach; endif; ?>
-             
-
-          </select>
+                   <div class="col-md-12">
+  <form method="GET" action="<?php echo U('lesson/index');?>" id='form'>
+      <div class="row">
+            <div class="col-xs-6 col-md-3">
+              <input name="btime" type="date" class="form-control" value="<?php echo ($_GET['btime']); ?>" placeholder="开始日期">
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <input name="etime" type="date" class="form-control" value="<?php echo I('etime');?>" placeholder="截至日期">
+            </div>
+      
+        <div class="col-xs-6 col-md-3">
+          <div class="input-group">
+            <input name="word" type='text' class='form-control' value="<?php echo I('word');?>" placeholder='球队/标题/描述/关键词搜索..'>
+            <span class="input-group-addon" onclick="$('#form').submit();"><i class="fa fa-search"></i></span>
+            <?php if($_GET['word'] != '' OR $_GET['btime'] != '' OR $_GET['etime'] != ''): ?><a title='清除条件' class="input-group-addon" href="<?php echo U('lesson/index');?>"><i class="fa fa-remove"></i></a><?php endif; ?>
+          </div>
         </div>
-
-
-								<div class="form-group">
-									<input type="text" name="tag" class="form-control" placeholder="tags" value="<?php echo ($info["tag"]); ?>">
-
-
-							</div>
-								<div class="form-group">
-									<a class="btn btn-info fb">发表</a>
-
-					</form>
+      
+      </div>
+      </form>
+      </div>
+      <hr>
 
 
 
-		</div>
+	<div class="col-md-12 ">
+  <a href="<?php echo U('Access/addnode');?>" class="btn pull-right">add</a>
+
+          
+                        
+                    
+
+                            <div class="table table-bordered">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                           
+                                            <th>id</th>
+                                            <th>Name</th>
+                                            <th>标题</th>
+                                            <th>状态</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="lessonbody">
+                                    <?php if(is_array($list)): foreach($list as $key=>$list): ?><tr delid="<?php echo ($list["id"]); ?>">
+                                           
+                                            <td><?php echo ($list["id"]); ?></td>
+                                            <td><?php echo ($list["name"]); ?></td>
+                                            <td><?php echo ($list["title"]); ?></td>
+
+                <td><?php if($list["status"] == '0'): ?><span class="label label-danger">锁定</span><?php else: ?><span class="label label-success">正常</span><?php endif; ?></td>
+
+                                            <td>
+                                             <a class="lesson-del btn btn-info"  lessonid="<?php echo ($list['id']); ?>"><i class=" icon-trash"></i></a>&nbsp  
+
+                                            <a class="btn btn-info" id="edit" uid="<?php echo ($list["id"]); ?>" href="<?php echo U('Access/addnode',array('id'=>$list['id']));?>"><i class="icon-edit"></i></a>&nbsp
+                                            <?php if($list["status"] == '1'): ?><a class="btn btn-info"  uid="<?php echo ($list["id"]); ?>" href="javascript:set(<?php echo ($list['id']); ?>,'0')">
+                                            <i class="fa fa-lock"></i></a><?php else: ?>
+                                             <a class="btn btn-info"  uid="<?php echo ($list["id"]); ?>" href="javascript:set(<?php echo ($list['id']); ?>,'1')">
+                                            <i class="fa fa-unlock"></i></a><?php endif; ?>
 
 
-<script type="text/javascript" src="/foot/Public/ckeditor/ckeditor.js"></script>
+                                            </td>
+
+                                        </tr><?php endforeach; endif; ?>
+                                    </tbody>
+                                </table>
+                                <ul class="pagination"><?php echo ($page); ?></ul>
+                              
+                            </div>
+                   
+
+	</div>
+
+
+
+
+   <!-- Modal -->
+<div class="modal fade" id="nodeadd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit the node</h4>
+      </div>
+      <div class="modal-body">
+      <form class="form">
+        <div class="form-group">
+            <label>node name</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+          
+
+
+      </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
-      var ed=CKEDITOR.replace("content");
-      $('body').on("click",".fb",function(){
-          var id = $("input[name='id']").val();
-          var title=$("input[name='title']").val();
-          var description=$("input[name='description']").val();
-          var forteam=$("select[name='forteam']").val();
-       
-          var content=ed.getData();
-          //alert(content);
-       
-          var tag=$("input[name='tag']").val();
-          if(title==""){
-                 $("input[name='title']").next().remove();
-                $("input[name='title']").after("<p>不能为空</p>");
+  
+              $('body').on("click",".lesson-del",function(){
+                  var leid=$(this).attr("lessonid");
+                  var newtr="";
+                   $.post("/foot/admin.php/home/lesson/index",{id:leid},function(data){
+                                $("tr[delid='"+data.id+"']").remove();
 
+                        });
 
-          } if(description==""){
-
-            $("input[name='ms']").next().remove();
-            $("input[name='ms']").after("<p>不能为空</p>");
-          }
-         if(forteam==""){
-
-            $("input[name='forteam']").next().remove();
-            $("input[name='forteam']").after("<p>不能为空</p>");
-          }
-
-
-
-          else{
-
-          $.post("/foot/admin.php/home/lesson/add",{id:id,title:title,forteam:forteam,description:description,content:content,tag:tag},function(data){
-                    alert(data.title+"发表成功"); //下一步跳转到个人文章页面
-
-                    location.href="<?php echo U('lesson/index');?>";
-
-
-
-          });
-        }
-
-      });
-
+                   });
+            
     </script>
     <script type="text/javascript">
-      $("select[name='forteam']").val(<?php echo ($info["forteam"]); ?>);
+      function set(id,t)
+      {
+        var r;
+        if (t == "0") {
+          r = confirm("R u sure to lock the node?");
+        }else{
+          r = confirm("R u sure to unlock the node? ");
+        }
+        if (r == true) {
+            $.post("<?php echo U('Access/nodelist');?>",{id:id,t:t},function(data){
 
+                  alert(data.msg);
+                  location.href="<?php echo U('Access/nodelist');?>";
+
+
+            });
+
+        }
+      }
     </script>
-  
+
+   
                  </div>
 
                

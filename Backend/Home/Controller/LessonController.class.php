@@ -91,6 +91,7 @@ class LessonController extends CommonController
                         'addtime'=>$time
                       );
                     $id=M("lesson")->add($arr);
+                    $arr = $data;
                     $arr['id']=$id;
                   
 

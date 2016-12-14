@@ -39,7 +39,6 @@
                                            
                                             <th>id</th>
                                             <th>Name</th>
-                                            <th>标题</th>
                                             <th>状态</th>
                                             <th>Action</th>
                                         </tr>
@@ -50,20 +49,22 @@
                                            
                                             <td>{$list.id}</td>
                                             <td>{$list.name}</td>
-                                            <td>{$list.title}</td>
+                                          
 
                 <td><if condition="$list.status eq '0'"><span class="label label-danger">锁定</span><else/><span class="label label-success">正常</span></if></td>
 
                                             <td>
                                              <a class="lesson-del btn btn-info"  lessonid="{$list['id']}"><i class=" icon-trash"></i></a>&nbsp  
 
-                                            <a class="btn btn-info" id="edit" uid="{$list.id}" href="{:U('Access/addnode',array('id'=>$list['id']))}"><i class="icon-edit"></i></a>&nbsp
+                                            <a class="btn btn-info" id="edit" uid="{$list.id}" href="{:U('Access/addrole',array('id'=>$list['id']))}"><i class="icon-edit"></i></a>&nbsp
                                             <if condition="$list.status eq '1'">
                                             <a class="btn btn-info"  uid="{$list.id}" href="javascript:set({$list['id']},'0')">
                                             <i class="fa fa-lock"></i></a><else/>
                                              <a class="btn btn-info"  uid="{$list.id}" href="javascript:set({$list['id']},'1')">
                                             <i class="fa fa-unlock"></i></a></if>
 
+
+          <a class="btn btn-info" href="{:U('Access/accessnode',array('id'=>$list['id']))}"><i class="icon-user"></i></a>
 
                                             </td>
 
@@ -131,10 +132,10 @@
           r = confirm("R u sure to unlock the node? ");
         }
         if (r == true) {
-            $.post("{:U('Access/nodelist')}",{id:id,t:t},function(data){
+            $.post("{:U('Access/rolelist')}",{id:id,t:t},function(data){
 
                   alert(data.msg);
-                  location.href="{:U('Access/nodelist')}";
+                  location.href="{:U('Access/rolelist')}";
 
 
             });

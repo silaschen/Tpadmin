@@ -138,37 +138,30 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="/foot/admin.php/hom
 					<form >
               <input type="hidden" name="id" value="<?php echo ($info["id"]); ?>">
 							<div class="form-group">
-									<input type="text" name="title" class="form-control" placeholder="文章标题" value="<?php echo ($info["title"]); ?>">
+              <label>Name</label>
+									<input type="text" name="name" class="form-control" placeholder="name  of the node" value="<?php echo ($info["name"]); ?>">
 
 
 							</div>
 							<div class="form-group">
-									<input type="text" name="description" class="form-control" placeholder="文章描述" value="<?php echo ($info["description"]); ?>">
+              <label>title</label>
+									<input type="text" name="title" class="form-control" placeholder="the title" value="<?php echo ($info["title"]); ?>">
 
 
 							</div>
 
-								<div class="form-group">
-						<textarea name="content"  class="form-control" rows="4" placeholder="文章内容"><?php echo ($info["content"]); ?></textarea>
-
-
-							</div>
+					
 
         <div class='form-group'>
-          <label>俱乐部</label>
-          <select class='form-control' name='forteam'>
-              <?php if(is_array($team)): foreach($team as $key=>$arr): ?><option value='<?php echo ($arr["id"]); ?>'><?php echo ($arr["clubname"]); ?></option><?php endforeach; endif; ?>
+          <label>cates</label>
+          <select class='form-control' name='pid'>
+              <?php if(is_array($cates)): foreach($cates as $key=>$arr): ?><option value='<?php echo ($arr["id"]); ?>'><?php echo ($arr["name"]); ?></option><?php endforeach; endif; ?>
              
 
           </select>
         </div>
 
 
-								<div class="form-group">
-									<input type="text" name="tag" class="form-control" placeholder="tags" value="<?php echo ($info["tag"]); ?>">
-
-
-							</div>
 								<div class="form-group">
 									<a class="btn btn-info fb">发表</a>
 
@@ -181,41 +174,36 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="/foot/admin.php/hom
 
 <script type="text/javascript" src="/foot/Public/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-      var ed=CKEDITOR.replace("content");
+      // var ed=CKEDITOR.replace("content");
       $('body').on("click",".fb",function(){
           var id = $("input[name='id']").val();
+          var name=$("input[name='name']").val();
           var title=$("input[name='title']").val();
-          var description=$("input[name='description']").val();
-          var forteam=$("select[name='forteam']").val();
+          var pid=$("select[name='pid']").val();
        
-          var content=ed.getData();
+          // var content=ed.getData();
           //alert(content);
        
-          var tag=$("input[name='tag']").val();
-          if(title==""){
-                 $("input[name='title']").next().remove();
-                $("input[name='title']").after("<p>不能为空</p>");
+          
+          if(name==""){
+                 $("input[name='name']").next().remove();
+                $("input[name='name']").after("<p>不能为空</p>");
 
 
-          } if(description==""){
+          } else if(title==""){
 
-            $("input[name='ms']").next().remove();
-            $("input[name='ms']").after("<p>不能为空</p>");
-          }
-         if(forteam==""){
-
-            $("input[name='forteam']").next().remove();
-            $("input[name='forteam']").after("<p>不能为空</p>");
+            $("input[name='title']").next().remove();
+            $("input[name='title']").after("<p>不能为空</p>");
           }
 
 
 
           else{
 
-          $.post("/foot/admin.php/home/lesson/add",{id:id,title:title,forteam:forteam,description:description,content:content,tag:tag},function(data){
-                    alert(data.title+"发表成功"); //下一步跳转到个人文章页面
+          $.post("/foot/admin.php/Home/Access/addnode",{id:id,name:name,title:title,pid:pid},function(data){
+                    alert(data.name+"发表成功"); //下一步跳转到个人文章页面
 
-                    location.href="<?php echo U('lesson/index');?>";
+                    location.href="<?php echo U('Access/nodelist');?>";
 
 
 

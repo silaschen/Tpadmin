@@ -133,103 +133,46 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="/foot/admin.php/hom
                  <!-- /. ROW  -->
                  <hr />
                    <div class="row">
-                 
-		<div class="col-md-12">
-					<form >
-              <input type="hidden" name="id" value="<?php echo ($info["id"]); ?>">
-							<div class="form-group">
-									<input type="text" name="title" class="form-control" placeholder="文章标题" value="<?php echo ($info["title"]); ?>">
-
-
-							</div>
-							<div class="form-group">
-									<input type="text" name="description" class="form-control" placeholder="文章描述" value="<?php echo ($info["description"]); ?>">
-
-
-							</div>
-
-								<div class="form-group">
-						<textarea name="content"  class="form-control" rows="4" placeholder="文章内容"><?php echo ($info["content"]); ?></textarea>
-
-
-							</div>
-
-        <div class='form-group'>
-          <label>俱乐部</label>
-          <select class='form-control' name='forteam'>
-              <?php if(is_array($team)): foreach($team as $key=>$arr): ?><option value='<?php echo ($arr["id"]); ?>'><?php echo ($arr["clubname"]); ?></option><?php endforeach; endif; ?>
-             
-
-          </select>
-        </div>
-
-
-								<div class="form-group">
-									<input type="text" name="tag" class="form-control" placeholder="tags" value="<?php echo ($info["tag"]); ?>">
-
-
-							</div>
-								<div class="form-group">
-									<a class="btn btn-info fb">发表</a>
-
-					</form>
+                 <div class="col-md-5">
+		<form>
+				<div class="form-group">
+					<input type="text" name="clubname" class="form-control" placeholder="俱乐部名字" value="<?php echo ($model["clubname"]); ?>">
+				</div>	
+				<div class="form-group">
+					<input type="text" name="rank" class="form-control" value="<?php echo ($model["rank"]); ?>" placeholder="rank now">
+				</div>
+				<div class="form-group">
+					<input type="text" name="matchtime" value="<?php echo ($model["matchtime"]); ?>" class="form-control" placeholder="比赛场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="wintime" class="form-control" value="<?php echo ($model["wintime"]); ?>" placeholder="赢球场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="defeattime" class="form-control" value="<?php echo ($model["defeattime"]); ?>" placeholder="输球场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="ping" value="<?php echo ($model["ping"]); ?>" class="form-control" placeholder="平局场数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="shotgo" class="form-control" value="<?php echo ($model["shotgo"]); ?>" placeholder="进球数">
+				</div>
+				<div class="form-group">
+					<input type="text" name="shotoff" class="form-control" value="<?php echo ($model["shotoff"]); ?>" placeholder="丢球数">
+				</div>
+				
+				<div class="form-group">
+					<a updateid="<?php echo ($model["id"]); ?>" class="rankupdate btn btn-info" action="/foot/admin.php/home/rank/doupdate">更新</a>
+				</div>
 
 
 
-		</div>
-
-
-<script type="text/javascript" src="/foot/Public/ckeditor/ckeditor.js"></script>
-<script type="text/javascript">
-      var ed=CKEDITOR.replace("content");
-      $('body').on("click",".fb",function(){
-          var id = $("input[name='id']").val();
-          var title=$("input[name='title']").val();
-          var description=$("input[name='description']").val();
-          var forteam=$("select[name='forteam']").val();
-       
-          var content=ed.getData();
-          //alert(content);
-       
-          var tag=$("input[name='tag']").val();
-          if(title==""){
-                 $("input[name='title']").next().remove();
-                $("input[name='title']").after("<p>不能为空</p>");
-
-
-          } if(description==""){
-
-            $("input[name='ms']").next().remove();
-            $("input[name='ms']").after("<p>不能为空</p>");
-          }
-         if(forteam==""){
-
-            $("input[name='forteam']").next().remove();
-            $("input[name='forteam']").after("<p>不能为空</p>");
-          }
 
 
 
-          else{
-
-          $.post("/foot/admin.php/home/lesson/add",{id:id,title:title,forteam:forteam,description:description,content:content,tag:tag},function(data){
-                    alert(data.title+"发表成功"); //下一步跳转到个人文章页面
-
-                    location.href="<?php echo U('lesson/index');?>";
+		</form>
 
 
-
-          });
-        }
-
-      });
-
-    </script>
-    <script type="text/javascript">
-      $("select[name='forteam']").val(<?php echo ($info["forteam"]); ?>);
-
-    </script>
-  
+</div>
                  </div>
 
                

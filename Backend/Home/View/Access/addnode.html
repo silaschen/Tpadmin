@@ -1,0 +1,89 @@
+
+		<div class="col-md-12">
+					<form >
+              <input type="hidden" name="id" value="{$info.id}">
+							<div class="form-group">
+              <label>Name</label>
+									<input type="text" name="name" class="form-control" placeholder="name  of the node" value="{$info.name}">
+
+
+							</div>
+							<div class="form-group">
+              <label>title</label>
+									<input type="text" name="title" class="form-control" placeholder="the title" value="{$info.title}">
+
+
+							</div>
+
+					
+
+        <div class='form-group'>
+          <label>cates</label>
+          <select class='form-control' name='pid'>
+              <foreach name="cates" item="arr">
+
+                <option value='{$arr.id}'>{$arr.name}</option>
+
+              </foreach>
+             
+
+          </select>
+        </div>
+
+
+								<div class="form-group">
+									<a class="btn btn-info fb">发表</a>
+
+					</form>
+
+
+
+		</div>
+
+
+<script type="text/javascript" src="__PUBLIC__/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+      // var ed=CKEDITOR.replace("content");
+      $('body').on("click",".fb",function(){
+          var id = $("input[name='id']").val();
+          var name=$("input[name='name']").val();
+          var title=$("input[name='title']").val();
+          var pid=$("select[name='pid']").val();
+       
+          // var content=ed.getData();
+          //alert(content);
+       
+          
+          if(name==""){
+                 $("input[name='name']").next().remove();
+                $("input[name='name']").after("<p>不能为空</p>");
+
+
+          } else if(title==""){
+
+            $("input[name='title']").next().remove();
+            $("input[name='title']").after("<p>不能为空</p>");
+          }
+
+
+
+          else{
+
+          $.post("__APP__/Home/Access/addnode",{id:id,name:name,title:title,pid:pid},function(data){
+                    alert(data.name+"发表成功"); //下一步跳转到个人文章页面
+
+                    location.href="{:U('Access/nodelist')}";
+
+
+
+          });
+        }
+
+      });
+
+    </script>
+    <script type="text/javascript">
+      $("select[name='forteam']").val({$info.forteam});
+
+    </script>
+  

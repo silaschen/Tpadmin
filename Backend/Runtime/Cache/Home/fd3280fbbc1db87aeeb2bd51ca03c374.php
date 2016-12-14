@@ -10,9 +10,9 @@
     <link href="/foot/Public/assets/css/font-awesome.css" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
     <link href="/foot/Public/assets/css/custom.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/foot/Public/fontsome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/foot/Public/Fontsome/css/font-awesome.css">
      <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+ <!--   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
      <script src="/foot/Public/assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="/foot/Public/assets/js/bootstrap.min.js"></script>
@@ -69,9 +69,20 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="/foot/admin.php/hom
                     <li>
                         <a  href="/foot/admin.php/home/video/index"><i class="fa fa-dashboard fa-3x"></i>视频管理</a>
                     </li>
-                     <li>
-                        <a  href="/foot/admin.php/home/access/index"><i class="fa fa-dashboard fa-3x"></i>权限管理</a>
-                    </li>
+                    
+
+                      <li>
+                        <a href="#"><i class="fa fa-sitemap fa-3x"></i>access管理<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/foot/admin.php/home/Access/nodelist">accesslist</a>
+                            </li>
+                            <li>
+                                <a href="/foot/admin.php/home/picnews/index">图片文章管理</a>
+                            </li>
+                        
+                        </ul>
+                      </li>  
                 	
 					                   
                     <li>

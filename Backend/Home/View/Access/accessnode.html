@@ -1,0 +1,80 @@
+
+		<div class="col-md-12">
+					<form  action="{:U('Access/accessnode')}" method="POST">
+          <input type="hidden" name="role_id" value="{$rid}">
+          <foreach name="access" item="arr">
+              
+						
+              
+									<input type="checkbox" name="node_id[]"  value="{$arr.id}">{$arr.name}&nbsp
+
+
+						
+						
+              
+
+                
+
+              </foreach>
+             
+
+        
+        </div>
+
+
+								<div class="form-group">
+									<button class="btn btn-info" onclick="$('#node').submit()">submit</button>
+
+					</form>
+
+
+
+		</div>
+
+
+<script type="text/javascript" src="__PUBLIC__/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+      // var ed=CKEDITOR.replace("content");
+      $('body').on("click",".fb",function(){
+          var id = $("input[name='id']").val();
+          var name=$("input[name='name']").val();
+          var title=$("input[name='title']").val();
+          var pid=$("select[name='pid']").val();
+       
+          // var content=ed.getData();
+          //alert(content);
+       
+          
+          if(name==""){
+                 $("input[name='name']").next().remove();
+                $("input[name='name']").after("<p>不能为空</p>");
+
+
+          } else if(title==""){
+
+            $("input[name='title']").next().remove();
+            $("input[name='title']").after("<p>不能为空</p>");
+          }
+
+
+
+          else{
+
+          $.post("__APP__/Home/Access/addnode",{id:id,name:name,title:title,pid:pid},function(data){
+                    alert(data.name+"发表成功"); //下一步跳转到个人文章页面
+
+                    location.href="{:U('Access/nodelist')}";
+
+
+
+          });
+        }
+
+      });
+
+    </script>
+    <script type="text/javascript">
+      $("select[name='forteam']").val({$info.forteam});
+
+    </script>
+  

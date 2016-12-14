@@ -26,25 +26,37 @@ class CommonController extends Controller
         }  
     }
 
-    // public function study(){
-  //       $end=strtotime("2016-08-13 13:00:00");
-  //       $now=strtotime(date("Y-m-d H:i:s"));
-  //       $left=$end-$now;//剩余总秒数
-  //       $day=floor($left/(3600*24));//剩余天数
-  //       $hour=floor(($left-$day*3600*24)/3600);//剩余小时
-  //       $min=floor(($left-$day*3600*24-$hour*3600)/60);//剩余分钟
-  //       $sec=floor($left-$day*3600*24-$hour*3600-$min*60);
-  //       $data=array(
-  //           'd'=>$day,
-  //           'h'=>$hour,
-  //           'min'=>$min,
-  //           'sec'=>$sec
+    public function study(){
+        $end=strtotime("2016-08-13 13:00:00");
+        $now=strtotime(date("Y-m-d H:i:s"));
+        $left=$end-$now;//剩余总秒数
+        $day=floor($left/(3600*24));//剩余天数
+        $hour=floor(($left-$day*3600*24)/3600);//剩余小时
+        $min=floor(($left-$day*3600*24-$hour*3600)/60);//剩余分钟
+        $sec=floor($left-$day*3600*24-$hour*3600-$min*60);
+        $data=array(
+            'd'=>$day,
+            'h'=>$hour,
+            'min'=>$min,
+            'sec'=>$sec
 
-  //           );
-  //       $this->ajaxReturn($data);
+            );
+        $this->ajaxReturn($data);
 
 
-  // }  
+  }  
+
+  #checklogin#
+  public function checklogin()
+  { 
+    if (!$_SESSION['uid']) {
+        
+        $this->redirect("User/login");
+    }
+
+
+
+  }
 
  
 }  

@@ -4468,3 +4468,336 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000158s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000275s ]
 
+[ 2016-12-13T22:38:51+08:00 ] 127.0.0.1 /foot/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000139s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/f90dca177af49f305dffc2aced3c3e40.php 第 151 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004687s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004755s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000188s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003342s ]
+
+[ 2016-12-13T22:39:02+08:00 ] 127.0.0.1 /foot/admin.php/home/user/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+
+[ 2016-12-13T22:39:06+08:00 ] 127.0.0.1 /foot/admin.php/home/rank/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000149s ]
+SQL: SHOW COLUMNS FROM `news_rank` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news_rank` LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: p /var/www/foot/Backend/Home/Controller/RankController.class.php 第 16 行.
+NOTIC: [8] Undefined index: limit /var/www/foot/ThinkPHP/Library/Think/Db/Driver.class.php 第 961 行.
+SQL: SELECT * FROM `news_rank` ORDER BY rank LIMIT 0,20   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000295s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000490s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008255s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000229s ]
+
+[ 2016-12-13T22:39:09+08:00 ] 127.0.0.1 /foot/admin.php/home/rank/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000137s ]
+SQL: SHOW COLUMNS FROM `news_rank` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news_rank` LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: p /var/www/foot/Backend/Home/Controller/RankController.class.php 第 16 行.
+NOTIC: [8] Undefined index: limit /var/www/foot/ThinkPHP/Library/Think/Db/Driver.class.php 第 961 行.
+SQL: SELECT * FROM `news_rank` ORDER BY rank LIMIT 0,20   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000238s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000333s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006899s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000090s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000158s ]
+
+[ 2016-12-13T22:39:13+08:00 ] 127.0.0.1 /foot/admin.php/home/lesson/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+
+[ 2016-12-13T22:39:13+08:00 ] 127.0.0.1 /foot/admin.php/Home/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000326s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004384s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004514s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000228s ]
+
+[ 2016-12-13T22:39:20+08:00 ] 127.0.0.1 /foot/admin.php/home/user/chklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000153s ]
+SQL: SHOW COLUMNS FROM `news_user` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `news_user` WHERE `name` = 'admin' AND `password` = 'admin' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2016-12-13T22:39:21+08:00 ] 127.0.0.1 /foot/admin.php/home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000148s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000209s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/f90dca177af49f305dffc2aced3c3e40.php 第 151 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000120s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000210s ]
+
+[ 2016-12-13T22:39:26+08:00 ] 127.0.0.1 /foot/admin.php/home/lesson/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Home/Controller/LessonController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `news_lesson` [ RunTime:0.0025s ]
+SQL: SELECT A.id,A.title,A.status,A.addtime,B.clubname FROM news_lesson A LEFT JOIN news_rank B ON A.forteam=B.id  ORDER BY A.addtime desc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000258s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000365s ]
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 129 行.
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 139 行.
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 139 行.
+NOTIC: [8] Undefined index: etime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 139 行.
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008442s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008522s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000114s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000197s ]
+
+[ 2016-12-13T22:39:29+08:00 ] 127.0.0.1 /foot/admin.php/Home/lesson/add/id/54.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000176s ]
+SQL: SHOW COLUMNS FROM `news_lesson` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `news_lesson` WHERE `id` = '54' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `news_rank` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `news_rank` ORDER BY rank desc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000279s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000381s ]
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/9182013347f84cda359b959cfa28d4bc.php 第 247 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007293s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000101s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000178s ]
+
+[ 2016-12-13T22:44:05+08:00 ] 127.0.0.1 /foot/admin.php/home/lesson/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000169s ]
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Home/Controller/LessonController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `news_lesson` [ RunTime:0.0021s ]
+SQL: SELECT A.id,A.title,A.status,A.addtime,B.clubname FROM news_lesson A LEFT JOIN news_rank B ON A.forteam=B.id  ORDER BY A.addtime desc  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000265s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000376s ]
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 140 行.
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 150 行.
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 150 行.
+NOTIC: [8] Undefined index: etime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 150 行.
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 235 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023717s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000223s ]
+
+[ 2016-12-13T22:44:17+08:00 ] 127.0.0.1 /foot/admin.php/home/lesson/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Home/Controller/LessonController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `news_lesson` [ RunTime:0.0025s ]
+SQL: SELECT A.id,A.title,A.status,A.addtime,B.clubname FROM news_lesson A LEFT JOIN news_rank B ON A.forteam=B.id  ORDER BY A.addtime desc  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000397s ]
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 140 行.
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 150 行.
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 150 行.
+NOTIC: [8] Undefined index: etime /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 150 行.
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/fda21d5bad35a0c1ecccefd57f660a49.php 第 235 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009567s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000168s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2016-12-13T22:44:21+08:00 ] 127.0.0.1 /foot/admin.php/home/Access/nodelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000141s ]
+SQL: SHOW COLUMNS FROM `news_think_node` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `news_think_node` WHERE `status` >= 0 LIMIT 0,2   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news_think_node` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0005s ]
+ERR: Class 'THink\Page' not found
+
+[ 2016-12-13T22:44:38+08:00 ] 127.0.0.1 /foot/admin.php/home/Access/nodelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000149s ]
+SQL: SHOW COLUMNS FROM `news_think_node` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `news_think_node` WHERE `status` >= 0 LIMIT 0,2   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news_think_node` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [2] Creating default object from empty value /var/www/foot/Backend/Home/Controller/AccessController.class.php 第 26 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given /var/www/foot/Backend/Home/Controller/AccessController.class.php 第 28 行.
+ERR: 模板不存在:./Backend/Home/View/Access/nodelist.html
+
+[ 2016-12-13T22:45:58+08:00 ] 127.0.0.1 /foot/admin.php/home/Access/nodelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `news_think_node` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `news_think_node` WHERE `status` >= 0 LIMIT 0,2   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news_think_node` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Creating default object from empty value /var/www/foot/Backend/Home/Controller/AccessController.class.php 第 26 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given /var/www/foot/Backend/Home/Controller/AccessController.class.php 第 28 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000265s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000371s ]
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 140 行.
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 150 行.
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 150 行.
+NOTIC: [8] Undefined index: etime /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 150 行.
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 236 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008294s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008376s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000102s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000180s ]
+
+[ 2016-12-13T22:46:03+08:00 ] 127.0.0.1 /foot/admin.php/Home/Access/nodelist/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000149s ]
+SQL: SHOW COLUMNS FROM `news_think_node` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `news_think_node` WHERE `status` >= 0 LIMIT 2,2   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news_think_node` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [2] Creating default object from empty value /var/www/foot/Backend/Home/Controller/AccessController.class.php 第 26 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given /var/www/foot/Backend/Home/Controller/AccessController.class.php 第 28 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000291s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000400s ]
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 140 行.
+NOTIC: [8] Undefined index: word /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 150 行.
+NOTIC: [8] Undefined index: btime /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 150 行.
+NOTIC: [8] Undefined index: etime /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 150 行.
+NOTIC: [8] Undefined variable: item /var/www/foot/Backend/Runtime/Cache/Home/4ba756bb8b68d10a707a6fe2f46ae8fb.php 第 236 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009285s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009372s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000094s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000169s ]
+
